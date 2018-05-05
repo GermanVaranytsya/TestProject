@@ -1,0 +1,16 @@
+﻿@model String
+
+@{
+
+    IFormatProvider formatProvider =
+        new System.Globalization.CultureInfo("en-US");
+    <input class="input-sm list="cars" name="brand" id="brand" />
+    <datalist id="cars">
+        <option value="Mercedes-Benz">
+        <option value="Audi">
+        <option value="BMW">
+        <option value="Toyota">
+        <option value="Shkoda">
+        <option value="Mazda">
+    </datalist>
+}

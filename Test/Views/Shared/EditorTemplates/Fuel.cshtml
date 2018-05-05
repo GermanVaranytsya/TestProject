@@ -1,0 +1,20 @@
+﻿@model String
+
+@{
+    IFormatProvider formatProvider =
+        new System.Globalization.CultureInfo("en-US");
+
+    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+        <label class="btn btn-primary">
+            <input type="radio" name="fuel" id="option1" autocomplete="off" value="Pertol"> Бензин
+        </label>
+        <label class="btn btn-primary">
+            <input type="radio" name="fuel" id="option2" autocomplete="off" value="Diesel"> Дизель
+        </label>
+        <label class="btn btn-primary">
+            <input type="radio" name="fuel" id="option3" autocomplete="off" value="Gas"> Газ
+        </label>
+
+    </div>
+
+}

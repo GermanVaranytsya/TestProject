@@ -1,0 +1,23 @@
+﻿@model String
+
+@{
+    IFormatProvider formatProvider =
+        new System.Globalization.CultureInfo("en-US");
+
+<div class="btn-group btn-group-toggle" data-toggle="buttons">
+    <label class="btn btn-danger">
+        <input type="radio" name="color" id="option1" autocomplete="off" value="Red"> Красный
+    </label>
+    <label class="btn btn-success">
+        <input type="radio" name="color" id="option2" autocomplete="off" value="Green"> Зеленый
+    </label>
+    <label class="btn btn-info">
+        <input type="radio" name="color" id="option3" autocomplete="off" value="Blue"> Голубой
+    </label>
+    <label class="btn btn-warning">
+        <input type="radio" name="color" id="option4" autocomplete="off" value="Orange"> Оранжевый
+    </label>
+</div>
+
+}
+

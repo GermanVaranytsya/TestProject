@@ -1,0 +1,85 @@
+﻿@model Test.Models.Car
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+<div name="MyForm" class="form-horizontal">
+    <div class="container">
+        
+        <h2 class="text-center">Car</h2>
+        <hr />
+             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group firstpage">
+            <div class="col-lg-4 col-lg-offset-4 text-center">
+                <div style="margin-bottom:10px;">
+                    @Html.LabelFor(model => model.brand, htmlAttributes: new { @class = "control-label h3" })
+                </div>
+                <div>
+                    @Html.EditorFor(model => model.brand)
+                    @Html.ValidationMessageFor(model => model.brand, "", new { @class = "text-danger" })
+                </div>
+                <input type="button" style="margin-top:10px;" value="Next" class="btn btn-default" onclick="goNext(1)" />
+            </div>
+        </div>
+
+        <div class="secondpage">
+            <div class="form-group">
+                <div class="col-lg-4 col-lg-offset-4 text-center">
+                    <div style="margin-bottom:10px;">
+                        @Html.LabelFor(model => model.color, htmlAttributes: new { @class = "control-label h3" })
+                    </div>
+                    @Html.EditorFor(model => model.color)
+                    @Html.ValidationMessageFor(model => model.color, "", new { @class = "text-danger" })
+                    <hr />
+
+                    <div style="margin-bottom:10px;">
+                        @Html.LabelFor(model => model.fuel, htmlAttributes: new { @class = "control-label h3" })
+                    </div>
+                    @Html.EditorFor(model => model.fuel)
+                    @Html.ValidationMessageFor(model => model.fuel, "", new { @class = "text-danger" })
+                    <hr />
+
+                    <div style="margin-bottom:10px;">
+                        @Html.LabelFor(model => model.transmission, htmlAttributes: new { @class = "control-label h3" })
+                    </div>
+                    @Html.EditorFor(model => model.transmission)
+                    @Html.ValidationMessageFor(model => model.transmission, "", new { @class = "text-danger" })
+                    <hr />
+                    <div style="margin-top:10px;">
+                        <input type="button" value="Back" class="btn btn-default" onclick="goBack(2)" />
+
+                        <input type="button" value="Next" class="btn btn-default" onclick="goNext(2)" />
+                    </div>
+                </div>
+                </div>
+            </div>
+        <div class="thirdpage">
+            <div class="col-lg-4 col-lg-offset-4 text-center">
+
+                <div style="margin-bottom:10px;">
+                    @Html.LabelFor(model => model.date, htmlAttributes: new { @class = "control-label" })
+                </div>
+                <div style="margin-left:25px;">
+                    @Html.EditorFor(model => model.date, new { htmlAttributes = new { @class = "datepicker form-control", @type = "date" } })
+                    @Html.ValidationMessageFor(model => model.date, "", new { @class = "text-danger", @id = "dateval" })
+                </div>
+                <div style="margin-bottom:10px;">
+                    @Html.LabelFor(model => model.text, htmlAttributes: new { @class = "control-label" })
+                </div>
+                <div style="margin-left:25px;">
+                    @Html.EditorFor(model => model.text, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.text, "", new { @class = "text-danger" })
+                    </div>
+                <div style="margin-top:10px;">
+                    <input type="button" value="Back" class="btn btn-default" onclick="goBack(3)" />
+
+                            <input type="submit" value="Finish" class="btn btn-default" onclick="lastPageOC()" />
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+}

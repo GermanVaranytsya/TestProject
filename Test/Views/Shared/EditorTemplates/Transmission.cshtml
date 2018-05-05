@@ -1,0 +1,16 @@
+﻿@model String
+
+@{
+    IFormatProvider formatProvider =
+        new System.Globalization.CultureInfo("en-US");
+
+    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+        <label class="btn btn-primary">
+            <input type="radio" name="transmission" id="option1" autocomplete="off" value="Auto"> Автомат
+        </label>
+        <label class="btn btn-primary">
+            <input type="radio" name="transmission" id="option2" autocomplete="off" value="Manual"> Ручная
+        </label>
+
+    </div>
+}
